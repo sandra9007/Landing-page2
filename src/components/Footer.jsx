@@ -147,22 +147,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
                     <p>© {currentYear} Moto Sells. All rights reserved.</p>
 
-                    <div className="flex items-center gap-3">
-                        <span className="flex items-center gap-1">
-                            <span className="w-2 h-2 bg-[#a4b937] rounded-full"></span>
-                            500+ Dealers
-                        </span>
-                        <span className="w-1 h-1 bg-gray-700 rounded-full"></span>
-                        <span className="flex items-center gap-1">
-                            <span className="w-2 h-2 bg-[#a4b937] rounded-full"></span>
-                            15k+ Vehicles
-                        </span>
-                        <span className="w-1 h-1 bg-gray-700 rounded-full"></span>
-                        <span className="flex items-center gap-1">
-                            <span className="w-2 h-2 bg-[#a4b937] rounded-full"></span>
-                            20+ Cities
-                        </span>
-                    </div>
+                    
 
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-[#a4b937] transition">Privacy</a>
