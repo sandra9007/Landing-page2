@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { BsDot } from 'react-icons/bs';
+import { FaCar, FaBuilding, FaSearch } from 'react-icons/fa';
 
 const Screenshots = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,6 +46,19 @@ const Screenshots = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % screenshots.length);
     };
 
+    const getIcon = (index) => {
+        switch(index) {
+            case 0:
+                return <FaCar className="text-[#a4b937]" />;
+            case 1:
+                return <FaBuilding className="text-[#a4b937]" />;
+            case 2:
+                return <FaSearch className="text-[#a4b937]" />;
+            default:
+                return <BsDot className="text-[#a4b937]" />;
+        }
+    };
+
     return (
         <section className="py-0 md:py-0 bg-[#020202] overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-16">
@@ -51,8 +67,10 @@ const Screenshots = () => {
                 <div className="text-center max-w-3xl mx-auto mb-12 mt-0">
                     <div className="flex justify-center mb-4">
                         <span className="inline-block px-4 py-1.5 bg-[#a4b937]/10 rounded-full border border-[#a4b937]/30">
-                            <span className="text-[#a4b937] font-semibold text-xs uppercase tracking-wider">
+                            <span className="text-[#a4b937] font-semibold text-xs uppercase tracking-wider flex items-center gap-2">
+                                <BsDot className="text-lg" />
                                 App Preview
+                                <BsDot className="text-lg" />
                             </span>
                         </span>
                     </div>
@@ -73,9 +91,8 @@ const Screenshots = () => {
 
                             <div className="relative bg-[#111] rounded-[48px] p-3 shadow-2xl border border-gray-800">
 
-                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-[#0a0a0a] rounded-b-2xl z-20 flex items-center justify-center">
-                                    <div className="w-16 h-2 bg-gray-800 rounded-full"></div>
-                                </div>
+                               
+                                
 
 
                                 <div className="relative bg-black rounded-[40px] overflow-hidden aspect-[9/19]">
@@ -104,10 +121,11 @@ const Screenshots = () => {
                                 <button
                                     key={index}
                                     onClick={() => handleDotClick(index)}
-                                    className={`transition-all duration-300 rounded-full ${currentIndex === index
-                                        ? 'w-8 h-2 bg-gradient-to-r from-[#a4b937] to-[#526103]'
-                                        : 'w-2 h-2 bg-gray-700 hover:bg-gray-600'
-                                        }`}
+                                    className={`transition-all duration-300 rounded-full ${
+                                        currentIndex === index
+                                            ? 'w-8 h-2 bg-gradient-to-r from-[#a4b937] to-[#526103]'
+                                            : 'w-2 h-2 bg-gray-700 hover:bg-gray-600'
+                                    }`}
                                     aria-label={`Go to screenshot ${index + 1}`}
                                 />
                             ))}
@@ -118,17 +136,13 @@ const Screenshots = () => {
                             onClick={handlePrev}
                             className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 hidden lg:flex items-center justify-center w-10 h-10 bg-[#0a0a0a] border border-gray-800 rounded-full hover:border-[#a4b937]/50 transition group"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-gray-400 group-hover:text-[#a4b937] transition">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                            </svg>
+                            <FiChevronLeft className="w-5 h-5 text-gray-400 group-hover:text-[#a4b937] transition" />
                         </button>
                         <button
                             onClick={handleNext}
                             className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-12 hidden lg:flex items-center justify-center w-10 h-10 bg-[#0a0a0a] border border-gray-800 rounded-full hover:border-[#a4b937]/50 transition group"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-gray-400 group-hover:text-[#a4b937] transition">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                            </svg>
+                            <FiChevronRight className="w-5 h-5 text-gray-400 group-hover:text-[#a4b937] transition" />
                         </button>
                     </div>
 
@@ -138,7 +152,7 @@ const Screenshots = () => {
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 bg-[#a4b937]/10 rounded-xl flex items-center justify-center">
                                 <span className="text-xl">
-                                    {currentIndex === 0 ? '🚗' : currentIndex === 1 ? '🏢' : '🔍'}
+                                    {getIcon(currentIndex)}
                                 </span>
                             </div>
                             <h3 className="text-2xl md:text-3xl font-bold text-white">
@@ -152,34 +166,20 @@ const Screenshots = () => {
                         </p>
 
 
-                        <div className="flex items-center gap-2">
-                            <span className="text-sm text-gray-500">
-                                {String(currentIndex + 1).padStart(2, '0')} / {String(screenshots.length).padStart(2, '0')}
-                            </span>
-                            <div className="w-12 h-1 bg-gray-800 rounded-full overflow-hidden">
-                                <div
-                                    className="h-full bg-gradient-to-r from-[#a4b937] to-[#526103] rounded-full transition-all duration-500"
-                                    style={{ width: `${((currentIndex + 1) / screenshots.length) * 100}%` }}
-                                ></div>
-                            </div>
-                        </div>
+                      
 
                         <div className="flex lg:hidden items-center justify-center gap-4 pt-4">
                             <button
                                 onClick={handlePrev}
                                 className="w-12 h-12 bg-[#0a0a0a] border border-gray-800 rounded-full hover:border-[#a4b937]/50 transition flex items-center justify-center"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-gray-400">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                                </svg>
+                                <FiChevronLeft className="w-5 h-5 text-gray-400" />
                             </button>
                             <button
                                 onClick={handleNext}
                                 className="w-12 h-12 bg-[#0a0a0a] border border-gray-800 rounded-full hover:border-[#a4b937]/50 transition flex items-center justify-center"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-gray-400">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                </svg>
+                                <FiChevronRight className="w-5 h-5 text-gray-400" />
                             </button>
                         </div>
                     </div>
