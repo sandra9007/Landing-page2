@@ -8,7 +8,7 @@ const Navbar = () => {
         <img
           src="./src/assets/handshake.png"
           alt="Dealer handshake"
-          className="w-full h-full object-cover object-center scale-105 opacity-90"
+          className="w-full h-full object-cover object-center scale-100 opacity-90"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#020202]/90 via-[#020202]/70 to-[#020202]/60" />
       </div>
@@ -35,13 +35,7 @@ const Navbar = () => {
             <button className="bg-gradient-to-r from-[#a4b937] to-[#526103] text-white px-2.5 sm:px-3 md:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-xs md:text-sm font-medium hover:opacity-90 transition shadow-lg whitespace-nowrap">
               GetApp
             </button>
-
-
-            <button className="lg:hidden text-white p-1.5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </button>
+           
           </div>
         </div>
       </div>

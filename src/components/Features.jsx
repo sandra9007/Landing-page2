@@ -8,7 +8,7 @@ import {
   FaLock,
   FaHandshake,
   FaCar,
-  FaFilter,
+ 
   FaTags,
   FaExchangeAlt,
   FaShareAlt
@@ -60,13 +60,7 @@ const Features = () => {
     }
   ];
 
-  const alternativeIcons = [
-    { icon: FaCar, tag: "Vehicle" },
-    { icon: FaFilter, tag: "Filters" },
-    { icon: FaTags, tag: "Pricing" },
-    { icon: FaExchangeAlt, tag: "Exchange" },
-    { icon: FaShareAlt, tag: "Share" }
-  ];
+ 
 
   return (
     <section className="py-0 md:py-0 bg-[#020202] overflow-hidden">
@@ -118,13 +112,12 @@ const Features = () => {
                 {feature.description}
               </p>
 
-              {/* Optional: Add a subtle corner accent on hover */}
-              <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-[#a4b937]/20 to-transparent rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
             </div>
           ))}
         </div>
 
-        {/* Optional: Stats or Trust Badge */}
+     
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-6 bg-[#0a0a0a] px-8 py-4 rounded-2xl border border-gray-800">
             <div className="flex items-center gap-2">

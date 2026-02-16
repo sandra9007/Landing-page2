@@ -44,7 +44,7 @@ const Problem = () => {
                 Lost Deal
               </span>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">Without Moto Mall</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Without Moto Selles</h3>
             <ul className="space-y-4 mb-6">
               <li className="flex items-start gap-3">
                 <FaTimesCircle className="text-red-500 text-xl flex-shrink-0" />
